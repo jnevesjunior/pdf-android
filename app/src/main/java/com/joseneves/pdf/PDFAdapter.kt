@@ -19,8 +19,6 @@ class PDFAdapter(internal var context: Context, internal var view: View) :
     private var pageHeight: Int = 842
     private var pageWidth: Int = 598
     var myPdfDocument: PdfDocument? = null
-    var totalpages = 1
-
 
     override fun onLayout(
         oldAttributes: PrintAttributes,
@@ -41,7 +39,7 @@ class PDFAdapter(internal var context: Context, internal var view: View) :
 
         val builder = PrintDocumentInfo.Builder("print_output.pdf")
             .setContentType(PrintDocumentInfo.CONTENT_TYPE_DOCUMENT)
-            .setPageCount(totalpages)
+            .setPageCount(1)
 
         val info = builder.build()
         callback.onLayoutFinished(info, true)
